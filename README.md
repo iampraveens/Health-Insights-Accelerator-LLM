@@ -19,9 +19,7 @@ Health Insights Accelerator is a research tool powered by GPT-3 and designed to 
 ## Features
 
 - **Data Ingestion:** Easily ingest data from one or more URLs for analysis.
-
 - **Vector Store Creation:** Create a vector store for efficient data retrieval using OpenAI's GPT-3 embeddings and FAISS indexing.
-
 - **Question Answering:** Ask questions related to the ingested data and receive informative answers.
 
 ## Getting Started
