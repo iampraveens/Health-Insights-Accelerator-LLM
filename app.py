@@ -115,7 +115,7 @@ if process_button:
         vector_store.create_store()
         st.sidebar.success("URLs processed successfully!")
   
-query = st.text_input("Question: ")
+query = st.text_input("Question:")
 
 if query:
     if os.path.exists(file_path):
