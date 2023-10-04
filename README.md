@@ -41,7 +41,7 @@ streamlit run app.py
 
 ## Usage
 - Set up your OpenAI API Key: Enter your API Key in the provided text input on the sidebar.
-- In the sidebar, provide URLs of the documents you want to analyze and click the "Process URLs" button. This will ingest the data, create a vector store, and store it as `vector_store.pkl`.
+- In the sidebar, provide URLs of the articles you want to analyze and click the "Process URLs" button. This will ingest the data, create a vector store, and store it as `vector_store.pkl`.
 - Enter your research questions in the "Question" text input and enter to retrieve answers.
 
 ## Customization
