@@ -1,7 +1,7 @@
 # Health Insights Accelerator - Research Tool <img src="https://cdn-icons-png.flaticon.com/512/10394/10394376.png" alt="Health Insights Accelerator - Research Tool" width="50" height="50">
 
 ## Application
-Deploy the model on streamlit cloud(temp) [Streamlit App](https://health-insights-accelerator-tool.streamlit.app/)
+Deployed the model on streamlit cloud(temp) [Streamlit App](https://health-insights-accelerator-tool.streamlit.app/)
 
 ## Table of Contents
 - [About](#about)
