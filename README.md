@@ -3,7 +3,7 @@
 ## Application
 Deployed the model on streamlit cloud(temp) [Streamlit App](https://health-insights-accelerator-tool.streamlit.app/)
 
-**Note:- Please use less worded article URLs to not get an maximum token error**
+**Note:- Please use less worded article URLs, not to get an maximum token error**
 
 ## Table of Contents
 - [About](#about)
