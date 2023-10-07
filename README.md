@@ -36,7 +36,7 @@ git clone https://github.com/iampraveens/Health-Insights-Accelerator-LLM.git
 pip install -r requirements.txt
 ```
 
-## Run AI
+## Run AI App
 
 ```bash
 streamlit run app.py
