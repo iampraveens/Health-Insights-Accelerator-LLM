@@ -12,7 +12,7 @@ class VectorStore:
     def create_store(self):
         try:
             embeddings = OpenAIEmbeddings(openai_api_key=self.openai_api_key)
-            vectore_store = FAISS.from_documents(self.documents, embedding=embeddings)
+            vectore_store = FAISS.from_documents(documents=self.documents, embedding=embeddings)
             with open(self.file_path, "wb") as file:
                 pickle.dump(vectore_store, file)
         except Exception as e:
