@@ -13,7 +13,7 @@ from chain import Chain
 url = "https://cdn-icons-png.flaticon.com/512/10394/10394376.png"
 response = requests.get(url)
 image = Image.open(BytesIO(response.content))
-page_title = 'Health Insights Accelerator'
+page_title = 'Insights Accelerator'
 page_icon = image
 layout = 'centered'
 
@@ -73,7 +73,7 @@ header_style = '''
              <nav class="navbar">
                  <div class="navbar-brand">
                 <img src="https://cdn-icons-png.flaticon.com/512/10394/10394376.png" alt="Logo">
-                    Health Insights Accelerator - Research Tool
+                    Insights Accelerator - Research Tool
                  </div>
              </nav>
                '''
