@@ -1,9 +1,10 @@
-# Health Insights Accelerator - Research Tool <img src="https://cdn-icons-png.flaticon.com/512/10394/10394376.png" alt="Health Insights Accelerator - Research Tool" width="50" height="50">
+# Insights Accelerator - Research Tool <img src="https://cdn-icons-png.flaticon.com/512/10394/10394376.png" alt="Insights Accelerator - Research Tool" width="50" height="50">
 
 ## Application
 Deployed the model on streamlit cloud(temp) [Streamlit App](https://health-insights-accelerator-tool.streamlit.app/)
 
 **Note:- Please use less worded article URLs, not to get an maximum token error**
+
 
 ## Table of Contents
 - [About](#about)
@@ -16,7 +17,7 @@ Deployed the model on streamlit cloud(temp) [Streamlit App](https://health-insig
 - [License](#license)
 
 ## About
-Health Insights Accelerator is a research tool powered by GPT-3 and designed to assist in processing and analyzing health-related documents. This tool allows users to ingest data from URLs, create a vector store for efficient retrieval, and ask questions to extract insights from the processed data.
+Insights Accelerator is a research tool powered by GPT-3 and designed to assist in processing and analyzing related documents. This tool allows users to ingest data from URLs, create a vector store for efficient retrieval, and ask questions to extract insights from the processed data.
 
 ## Features
 
@@ -36,7 +37,7 @@ git clone https://github.com/iampraveens/Health-Insights-Accelerator-LLM.git
 pip install -r requirements.txt
 ```
 
-## Run AI
+## Run AI App
 
 ```bash
 streamlit run app.py
