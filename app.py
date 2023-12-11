@@ -3,17 +3,17 @@ import streamlit as st
 import requests
 from io import BytesIO
 from PIL import Image
-from langchain import OpenAI
+from langchain.llms import OpenAI
 
 from config import Config
 from data_ingest import DataIngest
-from vector_store import VectorStore, VectorRetreive
+from vector_store import VectorStore
 from chain import Chain
 
-url = "https://cdn-icons-png.flaticon.com/512/10394/10394376.png"
+url = "https://cdn-icons-png.flaticon.com/512/4149/4149701.png"
 response = requests.get(url)
 image = Image.open(BytesIO(response.content))
-page_title = 'Health Insights Accelerator'
+page_title = 'Insights Accelerator'
 page_icon = image
 layout = 'centered'
 
@@ -72,8 +72,8 @@ header_style = '''
              
              <nav class="navbar">
                  <div class="navbar-brand">
-                <img src="https://cdn-icons-png.flaticon.com/512/10394/10394376.png" alt="Logo">
-                    Health Insights Accelerator - Research Tool
+                <img src="https://cdn-icons-png.flaticon.com/512/4149/4149701.png" alt="Logo">
+                    Insights Accelerator - Research Tool
                  </div>
              </nav>
                '''
@@ -83,7 +83,7 @@ st.markdown(header_style, unsafe_allow_html=True)
 # Load configuration
 config = Config()
 
-openai_api_key = st.sidebar.text_input("Enter your API Key:", type="password", key="api_key")
+openai_api_key = st.sidebar.text_input("Enter your OpenAPI Key:", type="password", key="api_key")
 config.openai_api_key = openai_api_key
 
 if config.openai_api_key:
@@ -94,38 +94,19 @@ for i in range(2):
     url = st.sidebar.text_input(f"URL {i+1}")
     urls.append(url)
     
-process_button = st.sidebar.button("Process URLs")
-file_path = "vector_store.pkl"
-
-if process_button:
-    
-     with st.spinner("Processing URLs..."):
-        if os.path.exists(file_path):
-            # Close the file before removing it
-            with open(file_path, 'rb') as f:
-                f.close()
-            os.remove(file_path)
-            
-        data_loader = DataIngest(urls)
-        documents = data_loader.ingest_data()
-        
-        vector_store = VectorStore(openai_api_key=config.openai_api_key, 
-                                documents=documents, 
-                                file_path=file_path)
-        vector_store.create_store()
-        st.sidebar.success("URLs processed successfully!")
-  
-query = st.text_input("Question:")
+query = st.chat_input(placeholder="Ask me something")
 
 if query:
-    if os.path.exists(file_path):
-        vectorstore_retreiver = VectorRetreive(openai_api_key=config.openai_api_key,
-                                               file_path=file_path)
-        retreived_vectorstore = vectorstore_retreiver.load_store()
-        
-        chain = Chain(llm=llm, retriever=retreived_vectorstore)
-        answer = chain.answer_question(query=query) 
-        
-        # {"answer": "", "sources": ""}
-        st.header("Response")
-        st.write(answer)
+    
+    data_loader = DataIngest(urls)
+    documents = data_loader.ingest_data()
+    
+    vector_store = VectorStore(openai_api_key=config.openai_api_key, 
+                            documents=documents)
+    
+    vectorstore_retreiver = vector_store.create_store()
+    chain = Chain(llm=llm, retriever=vectorstore_retreiver)
+    answer = chain.answer_question(query=query) 
+    
+    st.header("Response")
+    st.write(answer)
