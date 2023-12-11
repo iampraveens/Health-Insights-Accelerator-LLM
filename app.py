@@ -100,7 +100,6 @@ if query:
     
     data_loader = DataIngest(urls)
     documents = data_loader.ingest_data()
-    
     vector_store = VectorStore(openai_api_key=config.openai_api_key, 
                             documents=documents)
     
