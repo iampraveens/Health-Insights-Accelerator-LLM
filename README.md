@@ -1,7 +1,7 @@
 # Insights Accelerator - Research Tool <img src="https://cdn-icons-png.flaticon.com/512/4149/4149701.png" alt="Insights Accelerator - Research Tool" width="50" height="50">
 
 ## Application
-Deployed the model on streamlit cloud(temp) [Streamlit App](https://health-insights-accelerator-tool.streamlit.app/)
+Deployed the model on streamlit cloud(temp) [Streamlit App](https://insights-accelerator-llm.streamlit.app/)
 
 **Note:- Please use less worded article URLs, not to get an maximum token error**
 
